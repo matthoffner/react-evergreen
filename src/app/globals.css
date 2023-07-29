@@ -1,0 +1,52 @@
+/* Light Mode Styles */
+@media (prefers-color-scheme: light) {
+  .app-root {
+    background-color: white;
+    color: black !important;
+  }
+
+  [class*="MuiAppBar-root"] {
+    background-color: #f5f5f5 !important;
+  }
+
+  [class*="MuiDrawer-paper"] {
+    background-color: #f5f5f5 !important;
+  }
+
+  [class*="MuiBox-root"] {
+    background-color: #f5f5f5 !important;
+  }
+
+  [class*="MuiCardContent-root"] {
+    background-color: #f5f5f5 !important;
+  }
+
+  [class*="MuiTypography-root"] {
+    color: black;
+  }
+
+  [class*="MuiBottomNavigation-root"] {
+    background-color: #f5f5f5 !important;
+  }
+}
+
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  .app-root {
+    background-color: black;
+    color: white;
+  }
+
+  [class*="MuiAppBar-root"] {
+    background-color: black;
+  }
+
+  [class*="MuiDrawer-paper"] {
+    background-color: black;
+  }
+  .invert {
+    filter: invert(1);
+  }
+}
+
