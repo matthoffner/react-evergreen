@@ -1,4 +1,3 @@
-// components/Tweet.client.js
 import { Card, CardContent, Typography, IconButton, Box, Avatar, Grid } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
@@ -10,15 +9,15 @@ const Tweet = ({ tweet }) => {
   return (
     <Card sx={{ marginBottom: 2, boxShadow: 0, bgcolor: 'black' }}>
       <CardContent sx={{ paddingBottom: 0 }}>
-        <Grid container>
-          <Grid item xs={1} sx={{ paddingLeft: '5px' }}>
-            <Avatar alt={tweet.author} src="/static/images/avatar/1.jpg" /> 
+        <Grid container alignItems="flex-start">
+          <Grid item xs={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Avatar alt={tweet.author} src="/static/images/avatar/1.jpg" sx={{ width: '60px', height: '60px' }} />
           </Grid>
-          <Grid item xs={11} sx={{}}>
-            <Box sx={{ paddingLeft: '5px', display: 'flex', justifyContent: 'space-between' }}>
+          <Grid item xs={10} sx={{ paddingLeft: '10px' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Typography variant="h6">{tweet.author}</Typography>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Typography variant="body2" sx={{ marginRight: 1 }}>9h</Typography> 
+                <Typography variant="body2" sx={{ marginRight: 1 }}>9h</Typography>
                 <IconButton aria-label="menu" size="small">
                   <MoreHorizIcon fontSize="small" />
                 </IconButton>
@@ -29,22 +28,23 @@ const Tweet = ({ tweet }) => {
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginTop: 1 }}>
               <Box sx={{ display: 'flex', justifyContent: 'start', paddingBottom: 0 }}>
-              <IconButton aria-label="like">
-                <FavoriteIcon fontSize="small" />
-              </IconButton>
-              <IconButton aria-label="reply">
-                <ChatBubbleOutlineIcon fontSize="small" />
-              </IconButton>
-              <IconButton aria-label="retweet">
-                <RepeatIcon fontSize="small" />
-              </IconButton>
-              <IconButton aria-label="message">
-                <EmailIcon fontSize="small" />
-              </IconButton>
-
+                <IconButton aria-label="like">
+                  <FavoriteIcon fontSize="small" />
+                </IconButton>
+                <IconButton aria-label="reply">
+                  <ChatBubbleOutlineIcon fontSize="small" />
+                </IconButton>
+                <IconButton aria-label="retweet">
+                  <RepeatIcon fontSize="small" />
+                </IconButton>
+                <IconButton aria-label="message">
+                  <EmailIcon fontSize="small" />
+                </IconButton>
               </Box>
             </Box>
-            <Typography sx={{ paddingLeft: '5px' }} variant="body2">{tweet.replies} Replies • {tweet.likes} Likes</Typography>
+            <Typography sx={{ paddingLeft: '5px' }} variant="body2">
+              {tweet.replies} Replies • {tweet.likes} Likes
+            </Typography>
           </Grid>
         </Grid>
       </CardContent>
