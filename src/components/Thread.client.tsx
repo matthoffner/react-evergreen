@@ -6,12 +6,30 @@ import EmailIcon from '@mui/icons-material/Email';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const Tweet = ({ tweet }) => {
+  const formatContentWithLinks = (content) => {
+    const linkRegex = /(https?:\/\/\S+)/;
+    const match = content.match(linkRegex);
+
+    if (match) {
+      const url = match[1];
+      const parts = content.split(linkRegex);
+      return (
+        <span>
+          {parts[0]}<a href={url} target="_blank" rel="noopener noreferrer">{url}</a>{parts[2]}
+        </span>
+      );
+    }
+
+    return content;
+  };
   return (
     <Card sx={{ marginBottom: 2, boxShadow: 0, bgcolor: 'black' }}>
       <CardContent sx={{ paddingBottom: 0 }}>
         <Grid container alignItems="flex-start">
           <Grid item xs={2} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Avatar alt={tweet.author} src="/static/images/avatar/1.jpg" sx={{ width: '60px', height: '60px' }} />
+            <Box sx={{ padding: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '60px', height: '60px' }}>
+              <Avatar alt={tweet.author} src="/static/images/avatar/1.jpg" sx={{ width: '100%', height: '100%' }} />
+            </Box>
           </Grid>
           <Grid item xs={10} sx={{ paddingLeft: '10px' }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -23,11 +41,11 @@ const Tweet = ({ tweet }) => {
                 </IconButton>
               </Box>
             </Box>
-            <Typography variant="body2" sx={{ paddingLeft: '5px', minHeight: '50px' }}>
-              {tweet.content}
+            <Typography variant="body2" sx={{ minHeight: '50px' }}>
+              {formatContentWithLinks(tweet.content)}
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginTop: 1 }}>
-              <Box sx={{ display: 'flex', justifyContent: 'start', paddingBottom: 0 }}>
+              <Box sx={{ marginLeft: '-10px', display: 'flex', justifyContent: 'start', paddingBottom: 0 }}>
                 <IconButton aria-label="like">
                   <FavoriteIcon fontSize="small" />
                 </IconButton>
@@ -42,7 +60,7 @@ const Tweet = ({ tweet }) => {
                 </IconButton>
               </Box>
             </Box>
-            <Typography sx={{ paddingLeft: '5px' }} variant="body2">
+            <Typography variant="body2">
               {tweet.replies} Replies • {tweet.likes} Likes
             </Typography>
           </Grid>
