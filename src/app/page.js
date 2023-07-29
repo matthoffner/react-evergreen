@@ -6,17 +6,71 @@ const NewsFeed = dynamic(() => import('../components/NewsFeed.client'), { ssr: f
 
 const HomePage = () => {
   const tweets = [
-    { id: 1, author: 'User 1', content: 'Hello, world! This is my first tweet.', replies: 10, likes: 24 },
-    { id: 2, author: 'User 2', content: 'Looking forward to the weekend!', replies: 5, likes: 12 },
-    { id: 3, author: 'User 3', content: 'Just had the best cup of coffee ever. ☕️', replies: 7, likes: 18 },
-    { id: 4, author: 'User 4', content: 'Beautiful sunset today. 🌇', replies: 8, likes: 26 },
-    { id: 5, author: 'User 5', content: 'Does anyone have good book recommendations? 📚', replies: 20, likes: 45 },
-    { id: 6, author: 'User 6', content: 'Excited about the game tonight! 🏀', replies: 15, likes: 30 },
-    { id: 7, author: 'User 7', content: 'Throwback to last summer. 🌞', replies: 12, likes: 40 },
-    { id: 8, author: 'User 8', content: 'Here\'s a quote for the day: "The only way to do great work is to love what you do." - Steve Jobs', replies: 9, likes: 35 },
-    { id: 9, author: 'User 9', content: 'Just finished my workout for the day. 💪', replies: 4, likes: 15 },
-    { id: 10, author: 'User 10', content: 'This is a tweet with a link. Check out https://openai.com', replies: 11, likes: 22 },
+    {
+      "id": 1,
+      "author": "react-evergreen",
+      "content": "Threads clone using the latest React. Link: https://github.com/matthoffner/react-evergreen",
+      "replies": 10,
+      "likes": 24
+    },
+    {
+      "id": 2,
+      "author": "serp-chat",
+      "content": "A Google clone with OpenAI functions. Link: https://huggingface.co/spaces/matthoffner/serp-chat",
+      "replies": 5,
+      "likes": 12
+    },
+    {
+      "id": 3,
+      "author": "falcon-mini",
+      "content": "A lightweight version of the Falcon chat app. Link: https://huggingface.co/spaces/matthoffner/falcon-mini",
+      "replies": 7,
+      "likes": 18
+    },
+    {
+      "id": 4,
+      "author": "starchat-ui",
+      "content": "User interface for the Starchat app. Link: https://huggingface.co/spaces/matthoffner/starchat-ui",
+      "replies": 8,
+      "likes": 26
+    },
+    {
+      "id": 5,
+      "author": "wizardcoder-sandbox",
+      "content": "An interactive coding sandbox for practicing algorithms and data structures. Link: https://github.com/matthoffner/wizardcoder-sandbox",
+      "replies": 20,
+      "likes": 45
+    },
+    {
+      "id": 6,
+      "author": "etcha",
+      "content": "CDN React Live Editor. Link: https://github.com/matthoffner/etcha",
+      "replies": 15,
+      "likes": 30
+    },
+    {
+      "id": 7,
+      "author": "ggml-fastapi",
+      "content": "FastAPI backend for the GGML static site generator. Link: https://github.com/matthoffner/ggml-fastapi",
+      "replies": 12,
+      "likes": 40
+    },
+    {
+      "id": 8,
+      "author": "backseat-pilot",
+      "content": "Bring your own co-pilot server and customize commands to refactor instead of autofill or tabbed completion. Link: https://github.com/matthoffner/backseat-pilot",
+      "replies": 9,
+      "likes": 35
+    },
+    {
+      "id": 9,
+      "author": "skymatt",
+      "content": "Uses the hour of the day to set a background gradient. Link: https://github.com/matthoffner/skymatt",
+      "replies": 4,
+      "likes": 15
+    }
 ];
+  
 
 
   return (
