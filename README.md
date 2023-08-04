@@ -6,5 +6,5 @@
 - [x] Apollo SSR
 - [x] MUI v5
 - [x] SSR Dark Mode
-- [ ] GA4
-- [ ] Datadog
+- [x] GA4 + nextjs13
+- [x] Datadog via nextjs13 Instrumentation
