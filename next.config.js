@@ -3,7 +3,8 @@ module.exports = {
       domains: ['seeklogo.com']
     },
     experimental: {
-      instrumentationHook: true
+      instrumentationHook: true,
+      serverActions: true
     }
 };
   
